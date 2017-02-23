@@ -1,0 +1,98 @@
+#topBanner {
+    border-radius: 15px 50px;
+    background: #73AD21;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none
+}
+
+a:visited {
+    color:blue;
+    background-color: transparent;
+    text-decoration:none
+}
+
+a:hover {
+    color: cornflowerblue;
+    background-color:transparent;
+    text-decoration:underline
+}
+
+a:active {
+    color: #73AD21;
+    background-color: transparent;
+    text-decoration:underline
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    float: right;
+}
+
+.buttonShadow:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.nospinner {
+    display: none;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
