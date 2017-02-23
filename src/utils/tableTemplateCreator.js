@@ -45,11 +45,17 @@ function createAndFillTableData (tableData) {
 }
 
 function createURLTags (url) {
-    var createAnchorElement = document.createElement('A');
-    createAnchorElement.setAttribute('href', url);
-    createAnchorElement.setAttribute('target', '_blank');
-    createAnchorElement.appendChild(document.createTextNode(url));
-    return createAnchorElement;
+    if (url === undefined) {
+        var createParagraphElement = document.createElement('P');
+        createParagraphElement.appendChild(document.createTextNode(infoNotAvailable));
+        return createParagraphElement;
+    } else {
+        var createAnchorElement = document.createElement('A');
+        createAnchorElement.setAttribute('href', url);
+        createAnchorElement.setAttribute('target', '_blank');
+        createAnchorElement.appendChild(document.createTextNode(url));
+        return createAnchorElement;
+    }
 }
 
 function createAndFillTableHeader () {
