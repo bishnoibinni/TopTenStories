@@ -1,67 +1,40 @@
-#topBanner {
-    border-radius: 15px 50px;
-    background: #73AD21;
-    padding: 20px;
-    margin-bottom: 10px;
+a:active {
+    background-color: transparent;
+    color: #73AD21;
+    text-decoration:underline
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
+a:hover {
+    background-color:transparent;
+    color: cornflowerblue;
+    text-decoration:underline
 }
 
 a:link {
-    color: black;
     background-color: transparent;
+    color: black;
     text-decoration: none
 }
 
 a:visited {
+    background-color: transparent;
     color:blue;
-    background-color: transparent;
     text-decoration:none
-}
-
-a:hover {
-    color: cornflowerblue;
-    background-color:transparent;
-    text-decoration:underline
-}
-
-a:active {
-    color: #73AD21;
-    background-color: transparent;
-    text-decoration:underline
 }
 
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    margin: 4px 2px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    float: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
 }
 
 .buttonShadow:hover {
@@ -73,26 +46,57 @@ a:active {
 }
 
 .spinner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid blue;
-    border-bottom: 16px solid blue;
-    width: 60px;
-    height: 60px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+    border: 16px solid #f3f3f3;
+    border-bottom: 16px solid green;
+    border-radius: 50%;
+    border-top: 16px solid green;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
 }
 
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+.topBanner {
+    background: #73AD21;
+    border-radius: 15px 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+

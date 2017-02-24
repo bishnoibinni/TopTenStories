@@ -15,18 +15,38 @@ module.exports = function(grunt) {
         },
         cssmin: {
             options: {
-                mergeIntoShorthands: false,
-                roundingPrecision: -1
+                mergeIntoShorthands: false
             },
-            target: {
+            target_demo: {
                 files: {
-                    'dest/topstories.min.css': ['src/css/index.css', 'src/css/index_button.css', 'src/css/index_spinner.css']
+                    'dest/topstories.min.css': ['src/css/index.css']
                 }
             }
+        },
+        csslint: {
+            strict: {
+                options: {
+                    import: 2
+                },
+                src: ['src/css/index.css']
+            },
+            lax: {
+                options: {
+                    import: false
+                },
+                src: ['path/to/**/*.css']
+            }
+        },
+        jshint: {
+            all: ['Gruntfile.js', 'src/**/*.js']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['uglify','cssmin']);
+    grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+
+    grunt.registerTask('default', ['csslint', 'cssmin', 'jshint', 'uglify']);
 
 };
